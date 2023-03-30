@@ -39,8 +39,10 @@ try:
         command.do()
 except KeyboardInterrupt:
     print('\nPerforming emergency save.')
+else:
+    print('Saving...')
+finally:
     saving.save()
-    print('Done.')
-    sys.exit(0)
+    print('Done.\nSee you soon...')
 
-saving.save()
+    sys.exit(0)

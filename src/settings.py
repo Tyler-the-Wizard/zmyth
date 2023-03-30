@@ -1,4 +1,7 @@
 def init():
+    global GAME
+    GAME = None
+
     global IS_RUNNING
     IS_RUNNING = True
 

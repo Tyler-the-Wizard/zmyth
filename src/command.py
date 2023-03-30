@@ -4,9 +4,31 @@ def do():
     cmd = input('> ')
 
     match cmd.lower():
-        case 'h':
-            # Print help
-            print('Help urself lol')
+        case 'h' | 'help':
+            help_msg = '''
+Commands:
+ help       show this message
+ inv        look at your inventory
+ tool       look at your tools
+ machine    look at your machines
+ recipes    search recipes by input or output
+ use        use a tool to craft something
+ auto       set up a machine for automatic crafting
+ exit       exit the program
+
+You can also just type the first letter of a command.
+'''
+            print(help_msg)
+
+        case 'i' | 'inv':
+            print('Inventory:')
+            # TODO
+
+        case 'q':
+            print("Type 'quit' to quit.")
+
+        case 'e':
+            print("Type 'exit' to exit.")
 
         case 'quit' | 'exit':
             settings.IS_RUNNING = False
