@@ -1,8 +1,12 @@
 import os
 
+import command
 import constants
 import prompt
+import saving
 import settings
+
+settings.init()
 
 '''
 Startup the program:
@@ -30,7 +34,7 @@ saves = os.listdir(constants.DIR_SAVE)
 
 if len(saves) == 0:
     # Create a new save
-    pass
+    saving.new()
 else:
     # Select a save
     print('Enter a selection:')
@@ -39,3 +43,14 @@ else:
         print(f' {i + 2} - {entry}')
 
     sel = prompt.get_int((1, 1+len(saves)))
+
+    if sel == 1:
+        saving.new()
+    else:
+        saving.load(saves[sel - 2])
+
+# Begin the main loop
+while settings.IS_RUNNING:
+    command.do()
+
+saving.save()
