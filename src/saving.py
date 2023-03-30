@@ -19,6 +19,10 @@ def load(filename):
         data = file.read()
 
     settings.SAVE_NAME = os.path.basename(filename)
+    print(f'Welcome back, {settings.SAVE_NAME}!')
+    print("Tyoe 'help' for a list of commands.")
 
 def new():
     settings.SAVE_NAME = input('Enter a name for your save:\n> ')
+    print('Welcome to zmyth!')
+    print("Tyoe 'help' for a list of commands.")

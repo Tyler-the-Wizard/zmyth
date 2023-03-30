@@ -6,15 +6,15 @@ def get_int(int_range=None):
 
         try:
             int_input = int(user_input)
-        except ValueError as _:
+        except ValueError:
             if int_range is None:
                 print('Please enter a number.')
             else:
-                print('Please enter a valid selection.')
+                print(f'Please enter a number from {int_range[0]} to {int_range[1]}.')
         else:
             if int_range is not None and not (
                     int_range[0] <= int_input <= int_range[1]):
-                print('Please enter a valid selection.')
+                print(f'Please enter a number from {int_range[0]} to {int_range[1]}.')
             else:
                 is_valid = True
 
