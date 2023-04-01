@@ -3,9 +3,8 @@ import settings
 def do():
     cmd = input('> ')
 
-    match cmd.lower():
-        case 'h' | 'help':
-            help_msg = '''
+    if 'help'.startswith(cmd.lower()):
+        help_msg = '''
 Commands:
  help       show this list
  inventory  look at your inventory
@@ -18,20 +17,26 @@ Commands:
 
 You can also just type the first letter of a command.
 '''
-            print(help_msg)
+        print(help_msg)
 
-        case 'i' | 'inv':
-            print('Inventory:')
-            # TODO
+    elif 'inventory'.startswith(cmd.lower()):
+        print('Inventory:')
+        for i in settings.GAME.items:
+            print(str(i))
 
-        case 'q':
-            print("Type 'quit' to quit.")
+    elif 'tools'.startswith(cmd.lower()):
+        print('Tools:')
+        for t in settings.GAME.tools:
+            print(str(t))
 
-        case 'e':
-            print("Type 'exit' to exit.")
+    elif 'machines'.startswith(cmd.lower()):
+        print('Machines:')
+        for m in settings.GAME.machines:
+            print(str(m))
 
-        case 'quit' | 'exit':
-            settings.IS_RUNNING = False
+    elif ('quit'.startswith(cmd.lower())
+            or 'exit'.startswith(cmd.lower())):
+        settings.IS_RUNNING = False
 
-        case _:
-            print(f"Unknown command '{cmd}'")
+    else:
+        print(f"Unknown command '{cmd}'")
