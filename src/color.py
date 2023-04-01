@@ -1,6 +1,7 @@
 import os
 
-os.system('color')
+if os.name == 'nt':
+    os.system('color')
 
 def colorize(text, color_code):
     return f'\33[{color_code}m{text}\33[0m'

@@ -43,6 +43,6 @@ else:
     print('Saving...')
 finally:
     saving.save()
-    print('Done.\nSee you soon...')
+    print('Done. See you soon...')
 
     sys.exit(0)

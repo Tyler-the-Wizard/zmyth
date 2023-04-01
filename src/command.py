@@ -7,10 +7,10 @@ def do():
         case 'h' | 'help':
             help_msg = '''
 Commands:
- help       show this message
- inv        look at your inventory
- tool       look at your tools
- machine    look at your machines
+ help       show this list
+ inventory  look at your inventory
+ tools      look at your tools
+ machines   look at your machines
  recipes    search recipes by input or output
  use        use a tool to craft something
  auto       set up a machine for automatic crafting
