@@ -44,6 +44,10 @@ class Tool:
         return (self.name + ' ' + color.YELLOW('(') +
              str(self.level) + color.YELLOW(')'))
 
+    def recipe_str(self):
+        return (self.name + ' ' + color.YELLOW('(') +
+             str(self.level) + '+' + color.YELLOW(')'))
+
 class Machine:
     def __init__(self, name, level):
         self.name = name

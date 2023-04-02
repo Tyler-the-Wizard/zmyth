@@ -4,10 +4,15 @@ import sys
 import command
 import constants
 import prompt
+import recipes
 import saving
 import settings
 
 settings.init()
+recipes.load()
+
+for r in settings.RECIPES:
+    print(r)
 
 try:
     os.mkdir(constants.DIR_SAVE)
