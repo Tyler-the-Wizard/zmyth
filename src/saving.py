@@ -46,14 +46,12 @@ def parse_data(data):
 
     try:
         for s in items_str:
-            item_dat = s.split(':')
-            items.append(game.Item(item_dat[0], int(item_dat[1])))
+            items.append(game.Item.from_string(s))
         for s in tools_str:
-            tool_dat = s.split(':')
-            tools.append(game.Tool(tool_dat[0], int(tool_dat[1])))
+            tools.append(game.Tool.from_string(s))
         for s in machines_str:
-            machine_dat = s.split(':')
-            machines.append(game.Machine(machine_dat[0], int(machine_dat[1])))
+            machines.append(game.Machine.from_string(s))
+
     except UnboundLocalError:
         print(color.RED('Error:'), 'unable to load save')
         raise
